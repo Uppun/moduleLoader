@@ -16,7 +16,7 @@ class MessageParser {
 
     informModules(msg) {
         const message = msg.content;
-        const command = message.split(' ')[1];
+        const command = message.split(' ')[0];
         const cb = this.modules.get(command);
         if (cb) {
             cb(msg);
@@ -27,3 +27,5 @@ class MessageParser {
         }
     }
 }
+
+module.exports = MessageParser;
